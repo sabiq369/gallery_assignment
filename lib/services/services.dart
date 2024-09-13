@@ -4,23 +4,19 @@ import 'package:gallery/utils/api.dart';
 class Services {
   final Dio _dio = Dio();
 
-  getGallery() async {
+  getGallery({required String searchText, required int page}) async {
     try {
       var response = await _dio.get(Api.baseUrl, queryParameters: {
         "key": Api.apiKey,
-        "q": "yellow+flowers",
+        "q": searchText,
         "image_type": "photo",
-        "pretty": "true",
+        "page": page,
       });
-      print('||||||||| Response |||||||||||');
-      print(response.statusCode);
-      print(response.data);
       if (response.statusCode == 200) {
         return response.data;
       }
     } catch (e) {
-      print('|||||| Error ||||||||||');
-      print(e.toString());
+      throw (e.toString());
     }
   }
 }
