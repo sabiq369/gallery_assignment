@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:gallery/utils/api.dart';
+import 'package:gallery/views/gallery/view/gallery.dart';
+import 'package:get/get.dart';
 
 class Services {
   final Dio _dio = Dio();
@@ -16,6 +18,7 @@ class Services {
         return response.data;
       }
     } catch (e) {
+      Get.offAll(() => Gallery());
       throw (e.toString());
     }
   }

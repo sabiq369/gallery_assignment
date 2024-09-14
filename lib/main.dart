@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:gallery/utils/network_controller/dependency_injection.dart';
 import 'package:gallery/views/gallery/view/gallery.dart';
 import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
+  DependencyInjection.init();
 }
 
 class MyApp extends StatelessWidget {

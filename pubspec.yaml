@@ -41,7 +41,8 @@ dependencies:
   flutter_staggered_grid_view:
   shimmer:
   connectivity_plus:
-  internet_connection_checker:
+
+
 
 dev_dependencies:
   flutter_test:
